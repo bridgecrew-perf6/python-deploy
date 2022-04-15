@@ -17,7 +17,7 @@ RUN pwd
 RUN ls
 
 # optimize image caching
-COPY docker/requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
