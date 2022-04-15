@@ -13,8 +13,11 @@ WORKDIR /projects
 RUN python3 -m venv venv
 RUN . venv/bin/activate
 
+RUN cd ../../../
+COPY requirements.txt /tmp/build/inputs/requirements.txt
+
 # optimize image caching
-COPY requirements.txt  /requirements.txt
+COPY requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
