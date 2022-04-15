@@ -14,9 +14,10 @@ RUN python3 -m venv venv
 RUN . venv/bin/activate
 
 RUN pwd 
-
+RUN ls
+RUN ls docker/
 # optimize image caching
-COPY requirements.txt requirements.txt
+COPY docker/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY . .
