@@ -15,7 +15,7 @@ RUN . venv/bin/activate
 
 RUN pwd 
 RUN ls
-RUN ls docker/
+
 # optimize image caching
 COPY docker/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
