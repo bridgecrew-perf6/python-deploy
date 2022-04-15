@@ -20,5 +20,5 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 EXPOSE 8082
-CMD [ "waitress-serve", "--port=8082", "app:app"]
-
+#CMD [ "waitress-serve", "--port=8082", "app:app"]
+CMD ["python3", "remote_exec.py", "8080"]
