@@ -21,4 +21,4 @@ COPY . .
 
 EXPOSE 8082
 #CMD [ "waitress-serve", "--port=8082", "app:app"]
-CMD ["python3", "remote_exec.py", "8080"]
+CMD ["python3", "remote_exec.py", "8082"]

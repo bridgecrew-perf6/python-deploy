@@ -87,7 +87,7 @@ class post_msg(Resource):
 		msg['Subject'] = email_subj
 
 		try:
-			server = smtplib.SMTP(***REMOVED***, 25)
+			server = smtplib.SMTP( ============, 25)
 			server.set_debuglevel(1)
 			server.sendmail(fromaddr, toaddrs, msg.as_string())
 			server.quit()   
@@ -106,8 +106,8 @@ class utils():
 		sshclnt = paramiko.SSHClient()
 		sshclnt.set_missing_host_key_policy(paramiko.AutoAddPolicy())   
 		#sshclnt.connect(=======", port=****, username=******, password=********)
-		#sshclnt.connect(=======", port=****, username=******, password=***REMOVED***)
-		sshclnt.connect(=======", port=*****, username=******, password=***REMOVED***)
+		#sshclnt.connect(=======", port=****, username=******, password=============)
+		sshclnt.connect(=======", port=*****, username=******, password=============)
 		return sshclnt
 
 	def execCommand(command):
