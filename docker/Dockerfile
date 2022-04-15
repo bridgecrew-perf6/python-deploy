@@ -13,15 +13,12 @@ WORKDIR /projects
 RUN python3 -m venv venv
 RUN . venv/bin/activate
 
-RUN pwd 
-RUN ls
-
 # optimize image caching
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
-EXPOSE 8081
-CMD [ "waitress-serve", "--port=8081", "app:app"]
+EXPOSE 8082
+CMD [ "waitress-serve", "--port=8082", "app:app"]
 
