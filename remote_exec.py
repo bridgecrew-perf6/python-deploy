@@ -44,7 +44,7 @@ class restartVM(Resource):
 		s = sshclnt.get_transport().open_session()
 		paramiko.agent.AgentRequestHandler(s)
 		sshclnt.exec_command("sudo /sbin/reboot", get_pty=True)
-		return jsonify({'message': 'Sent Restart remote server : ***REMOVED***'})
+		return jsonify({'message': 'Sent Restart remote server : **********.*********.com'})
 
 
 class apiCheck(Resource):
@@ -55,7 +55,7 @@ class df_exec(Resource):
 	# corresponds to the GET request.
 	def get(self):
 		utils.execCommand("df -H")
-		return jsonify({'message': 'Sent SSH df -H to remote server : ***REMOVED***'})
+		return jsonify({'message': 'Sent SSH df -H to remote server :************ .*******.com'})
 
 	# Corresponds to POST request
 	def post(self):
@@ -63,11 +63,11 @@ class df_exec(Resource):
 		return jsonify({'data': data}), 201
 
 
-#stdin, stdout, stderr = sshclnt.exec_command("./mkdir_test.sh jayant_dir" )
+#stdin, stdout, stderr = sshclnt.exec_command("./mkdir_test.sh _dir" )
 class status(Resource):
 	def get(self):
 		utils.execCommand("df -H")
-		return jsonify({'message': 'Sent SSH mkdir to remote server : ***REMOVED***'})
+		return jsonify({'message': 'Sent SSH mkdir to remote server : **********.*******.com'})
 
 
 class post_msg(Resource):
@@ -80,14 +80,14 @@ class post_msg(Resource):
 		return jsonify({"message" : "Completed Post"})
 
 	def send_email(self, toaddrs, email_subj, email_msg):
-		fromaddr = "some.body@ibm.com"
-		#toaddrs  = ["Jayant.kulkarni@ibm.com;Jayant.kulkarni@ibm.com"]
+		fromaddr = "Jayant.kulkarni@ibm.com"
+		#toaddrs  = ["somebody@ibm.com;somebody@ibm.com"]
 
 		msg = MIMEText(email_msg)
 		msg['Subject'] = email_subj
 
 		try:
-			server = smtplib.SMTP( ============, 25)
+			server = smtplib.SMTP(==========, **)
 			server.set_debuglevel(1)
 			server.sendmail(fromaddr, toaddrs, msg.as_string())
 			server.quit()   
@@ -105,9 +105,9 @@ class utils():
 	def getSSHClient():
 		sshclnt = paramiko.SSHClient()
 		sshclnt.set_missing_host_key_policy(paramiko.AutoAddPolicy())   
-		#sshclnt.connect(=======", port=****, username=******, password=********)
-		#sshclnt.connect(=======", port=****, username=******, password=============)
-		sshclnt.connect(=======", port=*****, username=******, password=============)
+		#sshclnt.connect("******.******.com", port=======, username="======", password="=======")
+		#sshclnt.connect("******.******.com", port======, username="====", password="======")
+		sshclnt.connect("******.******.com", port======, username="=====", password="======")
 		return sshclnt
 
 	def execCommand(command):
